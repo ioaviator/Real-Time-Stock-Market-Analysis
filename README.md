@@ -108,6 +108,12 @@
   ### Connect Power BI to Postgres
   ![Power BI Login](./_img/power_bi_connection.png)
 
+
+  ### Shut down server
+  ```bash
+    docker compose down -v
+  ```
+
   ### Further Additions
   - Observability and Monitoring of system pipelines
   - Data Processing using Kafka Streams 
