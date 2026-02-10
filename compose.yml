@@ -59,6 +59,7 @@ services:
     depends_on:
       - spark-master
       - kafka                  # Wait for Kafka and Spark to be online before starting job
+    env_file: .env
     restart: unless-stopped
     volumes:
       - ivy_cache:/opt/spark/work-dir/.ivy2
