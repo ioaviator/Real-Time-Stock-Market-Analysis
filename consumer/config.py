@@ -1,8 +1,5 @@
 from pyspark.sql.types import StructType, StructField, StringType
-from dotenv import load_dotenv
 import os
-
-load_dotenv()
 
 # directory where Spark will store its checkpoint data. crucial in streaming to enable fault tolerance
 checkpoint_dir = "/tmp/checkpoint/kafka_to_postgres" 
