@@ -10,7 +10,7 @@ networks:
 
 services:
   spark-master:
-    image: spark:3.5.1-python3               # Use the official Apache Spark image with Python 3 support (v3.5.7)
+    image: spark:3.5.1-python3              # Use the official Apache Spark image with Python 3 support (v3.5.7)
     container_name: spark-master             # Assign a fixed, human-readable name to this container
     command: [                           # Override the default container command to start Spark master manually
       "/opt/spark/bin/spark-class", 
@@ -33,7 +33,7 @@ services:
   # Spark Worker Node
   # ------------------------------------------------------------
   spark-worker:
-    image: spark:3.5.1-python3             
+    image: spark:3.5.1-python3            
     container_name: spark-worker             # Name for the worker container
     command: [                           # Override the default container command to start Spark master manually
       "/opt/spark/bin/spark-class", 
@@ -54,7 +54,7 @@ services:
     build:
       context: ./consumer              # Use same Apache Spark image for PySpark streaming
       dockerfile: Dockerfile
-    image: stream_consumer
+    image: stream_consumer:v1
     container_name: consumer          # Assign a name for the streaming job container
     depends_on:
       - spark-master
